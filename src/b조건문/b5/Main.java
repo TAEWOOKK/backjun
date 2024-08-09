@@ -12,10 +12,11 @@ public class Main {
         if(m >= 45){
             m = m-45;
         } else{
-            h = h-1;
             m = m+15;
             if(h < 1){
                 h = 23;
+            }else{
+                h = h-1;
             }
         }
 
