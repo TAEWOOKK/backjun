@@ -11,24 +11,27 @@ public class Main {
 
         int n = Integer.parseInt(br.readLine());
 
-        int min = 1000000, max = 0;
+        int[] arr = new int[n];
 
-        StringTokenizer stk;
+        StringTokenizer stk =  new StringTokenizer(br.readLine());
 
         for (int i = 0; i < n; i++) {
-
-            stk = new StringTokenizer(br.readLine());
-
-            int a = Integer.parseInt(stk.nextToken());
-
-            if(min>a){
-                min=a;
-            }
-            if(max<a){
-                max=a;
-            }
+            arr[i] = Integer.parseInt(stk.nextToken());
         }
 
+        int min = arr[0], max = arr[0];
+
+        for (int i = 1; i < n; i++) {
+
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        br.close();
         bw.write(min + " " + max);
         bw.flush();
         bw.close();
