@@ -15,20 +15,24 @@ public class Main {
         int m = Integer.parseInt(stk.nextToken());
 
         int[] arr = new int[n+1];
-        int[] oriarr = new int[n+1];
+        
 
         for (int i = 1; i <= n; i++) {
             arr[i] = i;
-            oriarr[i] = i;
         }
 
         for (int i = 1; i <= m; i++) {
+
+            int[] oriarr = new int[n+1];
+
+            for (int k = 1; k <= n; k++) {
+                oriarr[k] = arr[k];
+            }
 
             stk = new StringTokenizer(br.readLine());
 
             int a = Integer.parseInt(stk.nextToken());
             int b = Integer.parseInt(stk.nextToken());
-
 
             int c = b;
             for (int j = a; j <= b; j++) {
