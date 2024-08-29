@@ -27,13 +27,30 @@ public class Main {
 
                 if (frequency > 1){
 
-                    boolean dupliCheck = false;
-
                     boolean noGroupCheck = false;
 
                     for (int j = 0; j < split.size(); j++) {
 
-                        if(j > 1 && )
+                        if(j==0 && split.get(j).equals(word)){
+
+                            if(!split.get(j+1).equals(word)){
+                                noGroupCheck = true;
+                            }
+                        }
+
+                        if(j > 0 && split.get(j).equals(word) && !split.get(j-1).equals(word)){
+
+                            if(j+1<split.size() && !split.get(j+1).equals(word)){
+
+                                noGroupCheck = true;
+                            }else if(j+1>=split.size()){
+                                noGroupCheck = true;
+                            }
+                        }
+
+                    }
+                    if(noGroupCheck){
+                        groupCheck = false;
                     }
                 }
             }
@@ -42,5 +59,9 @@ public class Main {
                 count++;
             }
         }
+
+        bw.write(String.valueOf(count));
+        bw.flush();
+        bw.close();
     }
 }
