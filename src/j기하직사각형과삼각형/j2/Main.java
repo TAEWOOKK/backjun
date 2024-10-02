@@ -12,16 +12,16 @@ public class Main {
 
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        String s = br.readLine();
+        int x = Integer.parseInt(st.nextToken());
 
-        double x = Double.parseDouble(st.nextToken());
+        int y = Integer.parseInt(st.nextToken());
 
-        double y = Double.parseDouble(st.nextToken());
+        int w = Integer.parseInt(st.nextToken())-x;
 
-        double w = Double.parseDouble(st.nextToken());
+        int h = Integer.parseInt(st.nextToken())-y;
 
-        double h = Double.parseDouble(st.nextToken());
+        int c = Math.min(Math.min(x, w), Math.min(y, h));
 
-
+        System.out.println(c);
     }
 }
