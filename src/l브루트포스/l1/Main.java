@@ -1,4 +1,4 @@
-package l브루트포스.ㅣ1;
+package l브루트포스.l1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
