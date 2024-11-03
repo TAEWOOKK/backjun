@@ -1,4 +1,4 @@
-package l브루트포스.I5;
+package l브루트포스.l6;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,22 +11,25 @@ public class Main {
 
         int n = Integer.parseInt(br.readLine());
 
-        int x = 0;
         int count = 0;
-        while (true) {
 
-            String su = String.valueOf(x);
+        while (true){
 
-
-            if(su.contains("666")){
-                count++;
-            }
-            if(count == n){
-                System.out.println(x);
+            if(n%5 == 0){
+                count = count + n/5;
                 break;
             }else{
-                x++;
+                if(n < 3){
+                    count = -1;
+                    break;
+                }else{
+                    n = n-3;
+                    count++;
+                }
             }
         }
+
+
+        System.out.println(count);
     }
 }
